@@ -18,7 +18,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
  
-   # AWS Credentials
+   ## AWS Credentials
     - uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -42,9 +42,9 @@ jobs:
    
     # set up Kustomize
     - name: Set up Kustomize
-    run: |-
-      curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
-      chmod u+x ./kustomize        
+      run: |-
+        curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
+        chmod u+x ./kustomize        
   
    # Deploy dockorized app image to the EKS cluster
     - name: Deploy Frontend 
