@@ -4,7 +4,7 @@ metadata:
   name: frontend-vs
 spec:
   hosts:
-    - "awsdevmanagedorg.sreyo.in"
+    - awsdevmanagedorg.sreyo.in
   gateways:
     - gateway
   http:
