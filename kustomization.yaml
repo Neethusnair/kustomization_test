@@ -4,3 +4,10 @@ namePrefix: test-
 resources:
 - frontend.yaml
 - vs-frontend.yaml
+
+vars:
+- name: MY_SERVICE_NAME
+  objref:
+    kind: Service
+    name: frontend-service
+    apiVersion: v1
