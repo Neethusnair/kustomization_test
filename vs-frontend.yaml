@@ -10,7 +10,7 @@ spec:
   http:
     - route:
         - destination:
-            host: "$(MY_SERVICE_NAME)".default.svc.cluster.local
+            host: $(MY_SERVICE_NAME).default.svc.cluster.local
             port:
               number: 8081
             #subset: v2
