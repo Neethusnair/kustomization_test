@@ -30,15 +30,15 @@ jobs:
         aws eks --region $EKS_REGION update-kubeconfig --name $EKS_CLUSTER
   
 
-   # Login to Jfrog
-    - name: Jfrog login
-      env:
-        JFROG_USER: ${{ secrets.JFROG_USER }}
-        JFROG_PASSWORD: ${{ secrets.JFROG_PASSWORD }}
-      run: |
-          docker login sreyo.jfrog.io -u $JFROG_USER -p $JFROG_PASSWORD
-          kubectl delete secret jfrog-secret --ignore-not-found 
-          kubectl create secret generic jfrog-secret --from-file=.dockerconfigjson=/home/runner/.docker/config.json  --type=kubernetes.io/dockerconfigjson
+#    # Login to Jfrog
+#     - name: Jfrog login
+#       env:
+#         JFROG_USER: ${{ secrets.JFROG_USER }}
+#         JFROG_PASSWORD: ${{ secrets.JFROG_PASSWORD }}
+#       run: |
+#           docker login sreyo.jfrog.io -u $JFROG_USER -p $JFROG_PASSWORD
+#           kubectl delete secret jfrog-secret --ignore-not-found 
+#           kubectl create secret generic jfrog-secret --from-file=.dockerconfigjson=/home/runner/.docker/config.json  --type=kubernetes.io/dockerconfigjson
    
     # set up Kustomize
     - name: Set up Kustomize
