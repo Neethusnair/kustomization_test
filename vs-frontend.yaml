@@ -4,7 +4,7 @@ metadata:
   name: frontend-vs
 spec:
   hosts:
-    - $(MY_SERVICE_NAME).sreyo.in
+    - {{ MY_SERVICE_NAME }}.sreyo.in
   gateways:
     - gateway
   http:
